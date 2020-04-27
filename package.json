@@ -1,0 +1,55 @@
+{
+  "name": "documentation",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "scripts": {
+    "clean:install": "npm run clean:node_modules && npm install",
+    "clean:node_modules": "node ./tools/clean/CleanNodeModules",
+    "compile": "npm run compile:build",
+    "compile:clean": "rimraf lib && rimraf aggregated-translations",
+    "compile:build": "npm run compile:babel",
+    "compile:babel": "babel src --out-dir lib --copy-files",
+    "deploy-gh-pages": "npm run pack && gh-pages -d build",
+    "lint": "npm run lint:js && npm run lint:scss",
+    "lint:fix": "npm run lint:js:fix && npm run lint:scss:fix",
+    "lint:js": "npm run prettier && eslint --ext .js,.jsx .",
+    "lint:js:fix": "npm run prettier && eslint --fix --ext .js,.jsx .",
+    "lint:scss": "stylelint src/**/*.scss",
+    "lint:scss:fix": "stylelint --fix src/**/*.scss",
+    "pack": "cross-env TERRA_DEV_SITE_PUBLIC_PATH='/FlashCasting/documentation/' webpack --config node_modules/terra-dev-site/config/webpack/webpack.config.js -p",
+    "prettier": "prettier --config ./prettier.config.js --write \"./**/*.js?(x)\" \"./**/*.md\"",
+    "start": "tt-serve --config node_modules/terra-dev-site/config/webpack/webpack.config.js"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/plugin-proposal-class-properties": "^7.7.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
+    "@babel/plugin-transform-object-assign": "^7.2.0",
+    "@babel/plugin-transform-regenerator": "^7.4.5",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/preset-react": "^7.0.0",
+    "core-js": "^3.6.5",
+    "cross-env": "^7.0.2",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-terra": "^1.0.0",
+    "gh-pages": "^2.0.0",
+    "prettier": "^1.14.0",
+    "stylelint": "^8.0.0",
+    "stylelint-config-terra": "^1.0.0",
+    "raf": "^3.4.1",
+    "terra-dev-site": "^6.18.0",
+    "terra-toolkit": "^5.25.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  }
+}

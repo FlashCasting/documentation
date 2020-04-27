@@ -1,0 +1,51 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+.idea/
+/dev-site-config/build
+dev-site-config/build/
+aggregated-translations/ar.js
+aggregated-translations/de.js
+aggregated-translations/en-AU.js
+aggregated-translations/en-CA.js
+aggregated-translations/en-GB.js
+aggregated-translations/en-US.js
+aggregated-translations/en.js
+aggregated-translations/es-ES.js
+aggregated-translations/es-US.js
+aggregated-translations/es.js
+aggregated-translations/fi-FI.js
+aggregated-translations/fr-FR.js
+aggregated-translations/fr.js
+aggregated-translations/intlLoaders.js
+aggregated-translations/nl-BE.js
+aggregated-translations/nl.js
+aggregated-translations/pt-BR.js
+aggregated-translations/pt.js
+aggregated-translations/sv-SE.js
+aggregated-translations/sv.js
+aggregated-translations/translationsLoaders.js
+public/favicon.ico
+public/index.html
+public/manifest.json
